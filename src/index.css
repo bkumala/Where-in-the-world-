@@ -1,0 +1,425 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+:root {
+  --dark-mode-elements: hsl(209, 23%, 22%);
+  --dark-mode-background: hsl(207, 26%, 17%);
+  --dark-mode-text: hsl(0, 0%, 100%);
+  --light-mode-text: hsl(200, 15%, 8%);
+  --light-mode-input: hsl(0, 0%, 52%);
+  --light-mode-background: hsl(0, 0%, 95%);
+  --light-mode-elements: hsl(0, 0%, 100%);
+  --font-weight-light: 300;
+  --font-weight-normal: 600;
+  --font-weight-bold: 800;
+  --transition: 0.4s ease-in-out all;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+  box-sizing: border-box;
+}
+main {
+  background-color: var(--light-mode-background);
+  color: var(--light-mode-text);
+  width: 100vw;
+  height: 100vh;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 10vh;
+}
+.title h2 {
+  margin-left: 1rem;
+  font-weight: var(--font-weight-bold);
+}
+.title button {
+  margin-right: 3rem;
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--dark-blue);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.title button:hover {
+  box-shadow: 0 2px var(--light-mode-text);
+}
+
+.search-input {
+  background-color: white;
+  width: 85vw;
+  height: 3rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin: 20px;
+  font-weight: var(--font-weight-normal);
+}
+#search {
+  background-color: white;
+  color: var(--light-mode-text);
+}
+.search-input i {
+  color: var(--light-mode-input);
+  text-align: center;
+  flex-grow: 1;
+  align-self: center;
+}
+.search-input input {
+  border: transparent;
+  color: var(--light-mode-input);
+  flex-grow: 9;
+  /* align-self: center; */
+  outline: none;
+  color: var(--light-mode-text);
+  border-radius: 10px;
+}
+section .search-bar {
+  background-color: var(--light-mode-background);
+  height: 25vh;
+}
+.dropdown {
+  cursor: pointer;
+  margin: 20px;
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  width: 50vw;
+  height: 3rem;
+  font-weight: var(--font-weight-normal);
+}
+
+.dropdown-text {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu {
+  position: absolute;
+  top: 65%;
+  list-style-type: none;
+  margin-top: 10px;
+  padding: 0;
+  border: none;
+  width: 100%;
+  background-color: white;
+}
+.menu > li {
+  margin: 0;
+  display: block;
+  background-color: var(--light-mode-background);
+}
+.menu > li:hover {
+  background-color: var(--light-mode-input);
+}
+.menu > li > button {
+  width: 100%;
+  height: 100%;
+  background: white;
+  color: inherit;
+  border: none;
+  padding: 5px;
+  margin: 0;
+  cursor: pointer;
+  /* jak tu zrobić border-radius dla całego menu? */
+  /* klasy / id dla pierwszego i ostatniego buttona? */
+}
+.no-result {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.country {
+  margin: auto;
+  text-align: center;
+  width: 300px;
+  height: 50vh;
+  margin-bottom: 40px;
+  background-color: white;
+  border-radius: 10px;
+  transition: var(--transition);
+
+  /* dlaczego img + data nie sumują się do 100?% => background color: white */
+}
+
+.country:hover {
+  width: 306px;
+  height: 51vh;
+  box-shadow: 0px 0px 50px -15px #424242;
+  cursor: pointer;
+
+  /* dlaczego img + data nie sumują się do 100?% => background color: white */
+}
+
+.country img {
+  width: 100%;
+  height: 50%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: cover;
+}
+
+.country-data {
+  text-align: left;
+  margin: 0;
+  width: 100%;
+  min-height: 150px;
+  height: 50%;
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-weight: var(--font-weight-light);
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  padding: 1rem 1.25rem;
+}
+
+.country-data h4 {
+  line-height: 2;
+  margin: 10px 0px 20px 0px;
+}
+
+section .countries-container {
+  background-color: var(--light-mode-background);
+}
+
+/* single country */
+.country-details button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  margin-left: 25px;
+  margin-bottom: 40px;
+  margin-top: 30px;
+  border-color: transparent;
+  background-color: var(--light-mode-background);
+  color: var(--dark-blue);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.country-details button:hover {
+  box-shadow: 0 2px var(--light-mode-text);
+}
+
+.back-arrow {
+  margin-right: 5px;
+}
+div .country-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div .country-card > img {
+  width: 50vh;
+  margin-bottom: 40px;
+}
+
+.country-card-data {
+  width: 100%;
+  padding-left: 3vh;
+}
+.country-card-data h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.main-info {
+  margin-bottom: 20px;
+}
+.additional-info {
+  margin-bottom: 20px;
+}
+.borders {
+  display: flex;
+  justify-content: flex-start;
+}
+.borders button {
+  margin-top: 10px;
+  display: inline-block;
+  cursor: pointer;
+  transition: var(--transition);
+  background-color: #f2f2f2;
+  color: var(--light-mode-text);
+  box-shadow: none;
+}
+.borders button:hover {
+  background-color: #f2f2f2;
+  color: var(--light-mode-text);
+  box-shadow: 0px 2px var(--light-mode-text);
+}
+
+@media screen and (min-width: 768px) {
+  .countries-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
+    /* przestrzenie pomiedzy kolumnami i na zewnatrz */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .countries-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .search-bar {
+    display: grid;
+    grid-template-columns: 75% 25%;
+  }
+  .search-input {
+    width: 35vw;
+  }
+  .dropdown {
+    width: 20vw;
+  }
+  div .country-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: stretch;
+    align-items: stretch;
+  }
+  div .country-card > img {
+    height: 45vh;
+    width: 45vw;
+    margin: auto;
+  }
+  .country-card-data {
+    height: 45vh;
+    width: 45vw;
+    padding: 0;
+  }
+  .info {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  div .border-countries {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .countries-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 40px;
+  }
+}
+
+/* --------- Dark Mode ----------------------- */
+
+.dark-mode main {
+  background-color: var(--dark-mode-background);
+  color: var(--dark-mode-text);
+}
+/* ???? */
+main .dark-mode {
+  background-color: var(--dark-mode-background);
+}
+
+.dark-mode .title {
+  background-color: var(--dark-mode-background);
+}
+.dark-mode .title h2 {
+  color: var(--dark-mode-text);
+}
+.dark-mode .title button {
+  color: var(--dark-mode-text);
+}
+.dark-mode .title button:hover {
+  box-shadow: 0 2px var(--dark-mode-text);
+}
+
+.dark-mode .search-input {
+  background-color: var(--dark-mode-elements);
+}
+.dark-mode .search-input i {
+  color: var(--dark-mode-text);
+}
+
+#search-dark-mode {
+  background-color: white;
+  color: var(--light-mode-text);
+}
+
+.search-input input {
+  color: var(--dark-mode-text);
+  background-color: var(--dark-mode-elements);
+}
+
+.dark-mode .dropdown-text {
+  color: white;
+}
+.dark-mode .menu {
+  color: var(--dark-mode-text);
+}
+
+.dark-mode .menu > li > button {
+  background: var(--dark-mode-elements);
+}
+div .dark-mode .no-result {
+  color: var(--dark-mode-text);
+  background-color: var(--dark-mode-background);
+  margin-top: 0;
+  padding-top: 50px;
+  height: 80vh;
+}
+
+section .dark-mode {
+  background-color: var(--dark-mode-background);
+}
+
+div .dark-mode .dropdown-text {
+  background-color: var(--dark-mode-elements);
+  border-radius: 10px;
+}
+
+.dark-mode .country {
+  background-color: var(--dark-mode-elements);
+}
+
+.dark-mode .country:hover {
+  box-shadow: 0px 0px 50px -15px #dad7d3;
+}
+
+.dark-mode .country-data {
+  background-color: var(--dark-mode-elements);
+  color: var(--dark-mode-text);
+}
+
+div .dark-mode .country-details {
+  color: var(--dark-mode-text);
+  height: 90vh;
+  margin-top: -30px;
+  /* rozwiązanie z marginesem, żeby nie było dziury jest jakieś marne */
+}
+
+.dark-mode .border-btn,
+.dark-mode .back-btn {
+  color: white;
+  box-shadow: none;
+}
+
+.dark-mode .border-btn:hover,
+.dark-mode .back-btn:hover {
+  box-shadow: 0px 2px white;
+  background-color: var(--dark-mode-background);
+  color: white;
+}
